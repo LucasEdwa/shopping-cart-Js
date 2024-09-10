@@ -36,14 +36,14 @@
     }
     .card {
       width: screen;
-
+      height: 100vh;
       h1 {
         text-align: left;
         font-size: 1.5rem;
       }
 
       .checkOut {
-        width: screen;
+        width: fit-content;
       }
     }
   }

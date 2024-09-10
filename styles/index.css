@@ -211,12 +211,14 @@ body footer {
   }
   body .card {
     width: screen;
+    height: 100vh;
   }
   body .card h1 {
     text-align: left;
     font-size: 1.5rem;
   }
   body .card .checkOut {
-    width: screen;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }/*# sourceMappingURL=index.css.map */
