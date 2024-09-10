@@ -209,6 +209,11 @@ body footer {
   body .container .list .pro .title .price {
     margin: 10px;
   }
-}
-
-/*# sourceMappingURL=index.css.map */
+  body .container .card {
+    width: screen;
+  }
+  body .container .card .checkOut {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}/*# sourceMappingURL=index.css.map */

@@ -33,6 +33,12 @@
           }
         }
       }
+      .card {
+        width: screen;
+        .checkOut {
+          width: fit-content;
+        }
+      }
     }
   }
 }
