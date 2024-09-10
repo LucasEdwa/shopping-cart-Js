@@ -211,7 +211,7 @@ body footer {
   }
   body .container .card {
     width: screen;
-    height: screen;
+    height: 50%;
   }
   body .container .card .checkOut {
     width: -moz-fit-content;
