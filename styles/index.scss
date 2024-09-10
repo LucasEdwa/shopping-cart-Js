@@ -1,0 +1,186 @@
+$primary-color: #1c1f25;
+$secondary-color: #453e3b;
+$highlight-color: #e8bc0e;
+$background-color: #e3e7e8;
+$font-family: "system-ui";
+$padding-small: 10px;
+$padding-medium: 20px;
+$padding-large: 30px;
+
+@mixin button($padding, $background-color) {
+  background-color: $background-color;
+  color: #fff;
+  padding: $padding;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  margin: 0;
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin box-shadow($color) {
+  box-shadow: 0 10px 10px $color;
+}
+
+@mixin grid-layout($column, $gap) {
+  display: grid;
+  grid-template-columns: repeat($column, 2fr);
+  gap: $gap;
+}
+
+.active {
+  .card {
+    left: calc(100% - 500px);
+  }
+  .container {
+    transform: translateX(-200px);
+  }
+}
+
+body {
+  background-color: $background-color;
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+
+  .container {
+    padding: 0 5px;
+    header {
+      display: grid;
+      grid-template-columns: 1fr 50px;
+      align-items: center;
+      padding: 0 30px;
+      background-color: $primary-color;
+      color: #fff;
+
+      .shopping {
+        position: relative;
+        text-align: right;
+        img {
+          width: 30px;
+          border-radius: 50%;
+          @include box-shadow($primary-color);
+          cursor: pointer;
+        }
+        .quantity {
+          background-color: red;
+          border-radius: 50%;
+          @include flex-center;
+          position: absolute;
+          color: #fff;
+          top: -8px;
+          left: 90%;
+          padding: 3px 5px;
+        }
+      }
+    }
+
+    .list {
+      @include grid-layout(3, 20px);
+      margin-top: 20px;
+      padding: 20px 20px;
+      .pro {
+        position: relative;
+        background-color: #fff;
+        padding: $padding-large;
+        border-radius: 10px;
+        @include box-shadow($secondary-color);
+
+        img {
+          width: 100%;
+        }
+        .title {
+          font-weight: 600;
+          font-size: 1.8rem;
+        }
+        .description {
+          margin: 10px 0;
+          font-size: 1rem;
+        }
+        .price {
+          margin: 10px 0;
+          font-size: 1.2rem;
+        }
+        .add-to-cart {
+          @include button($padding-small, $primary-color);
+        }
+      }
+    }
+  }
+
+  .card {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 500px;
+    background-color: $secondary-color;
+    height: 100vh;
+    transition: 0.5s;
+    h1 {
+      color: $highlight-color;
+      font-weight: 100;
+      margin: 0;
+      padding: 0 20px;
+      height: 80px;
+      @include flex-center;
+    }
+
+    .listCard {
+      li {
+        @include grid-layout(4, 10px);
+        color: #fff;
+        row-gap: 10px;
+
+        div {
+          @include flex-center;
+        }
+        img {
+          width: 90%;
+        }
+        button {
+          width: auto;
+          background-color: $primary-color;
+          border: none;
+
+          &:hover {
+            background-color: #fff;
+          }
+        }
+        .count {
+          margin: 0 10px;
+        }
+      }
+    }
+
+    .checkOut {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      @include grid-layout(2, 0);
+      div {
+        @include button(20px 0, #e8bc0e);
+        &:nth-child(2) {
+          @include button(20px 0, $primary-color);
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: $primary-color;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+@import "_MQuery";
