@@ -175,7 +175,7 @@ body footer {
 @media (max-width: 600px) {
   body .container {
     padding: 0;
-    width: screen;
+    width: 100%;
   }
   body .container header {
     grid-template-columns: 1fr;
@@ -209,12 +209,14 @@ body footer {
   body .container .list .pro .title .price {
     margin: 10px;
   }
-  body .container .card {
+  body .card {
     width: screen;
-    height: 50%;
   }
-  body .container .card .checkOut {
-    width: -moz-fit-content;
-    width: fit-content;
+  body .card h1 {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  body .card .checkOut {
+    width: screen;
   }
 }/*# sourceMappingURL=index.css.map */

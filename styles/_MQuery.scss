@@ -2,7 +2,7 @@
   body {
     .container {
       padding: 0;
-      width: screen;
+      width: 100%;
       header {
         grid-template-columns: 1fr;
         padding: 0;
@@ -33,12 +33,17 @@
           }
         }
       }
-      .card {
+    }
+    .card {
+      width: screen;
+
+      h1 {
+        text-align: left;
+        font-size: 1.5rem;
+      }
+
+      .checkOut {
         width: screen;
-        height: 50%;
-        .checkOut {
-          width: fit-content;
-        }
       }
     }
   }
