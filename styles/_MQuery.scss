@@ -43,7 +43,9 @@
       }
 
       .checkOut {
-        width: fit-content;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
       }
     }
   }
